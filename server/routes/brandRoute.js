@@ -7,4 +7,6 @@ router.get('/', controller.getBrands);
 
 router.post('/', controller.createBrand);
 
+router.delete('/', controller.deleteBrand);
+
 module.exports = router;

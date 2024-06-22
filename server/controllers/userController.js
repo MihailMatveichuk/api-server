@@ -1,3 +1,4 @@
+const ApiError = require('../error/ApiError');
 const models = require('../models/models');
 
 class UserController {
@@ -32,7 +33,12 @@ class UserController {
     }
   }
 
-  async auth(req, res) {
+  async auth(req, res, next) {
+    const { id } = req.query;
+
+    if (!id) {
+      return next(ApiError.internal('User cant found'));
+    }
     try {
       const users = await models.User.findAll();
       res.status(200).json({

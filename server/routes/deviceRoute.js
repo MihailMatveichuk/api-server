@@ -5,10 +5,12 @@ const controller = require('../controllers/deviceController');
 
 router.get('/', controller.getDevices);
 
+router.get('/:id', controller.getOneDevice);
+
 router.post('/', controller.createDevice);
 
-router.put('/:id', controller.updateDevice);
+router.put('/', controller.updateDevice);
 
-router.delete('/:id', controller.deleteDevice);
+router.delete('/', controller.deleteDevice);
 
 module.exports = router;

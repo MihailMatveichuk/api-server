@@ -7,4 +7,6 @@ router.get('/', controller.getTypes);
 
 router.post('/', controller.createType);
 
+router.delete('/', controller.deleteType);
+
 module.exports = router;
